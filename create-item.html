@@ -13,7 +13,7 @@
     </header>
     <main>
         <section>
-            <form>
+            <form id="create-item">
                 <p>
                     <label for="name">Name:</label>
                     <input
@@ -23,13 +23,44 @@
                     >
                 </p>
                 <p>
-                    <label for="category">Category:</label>
-                    <select id="category">
+                    <label for="department">Department:</label>
+                    <select id="department">
                         <option value="produce">Produce</option>
-                        <option value="dairy">Dairy</option>
-                        <option value="dry-goods">Dry Goods</option>
-                        <option value="beverages">Beverages</option>
+                        <option value="refrigerate">Refrigerate</option>
+                        <option value="freezer">Freezer</option>
+                        <option value="non-perishables">Non-Perishables</option>
                     </select>
+                </p>
+                <p>Category</p>
+                <p>
+                    <label for="dairy">Dairy</label>
+                    <input
+                        type="checkbox"
+                        id="dairy"
+                        name="category"
+                        value="dairy"
+                    >
+                    <label for="meat">Meat</label>
+                    <input
+                        type="checkbox"
+                        id="meat"
+                        name="category"
+                        value="meat"
+                    >
+                    <label for="prepared">Prepared Foods</label>
+                    <input
+                        type="checkbox"
+                        id="prepared"
+                        name="category"
+                        value="prepared"
+                    >
+                    <label for="vegetables">Vegetables</label>
+                    <input
+                        type="checkbox"
+                        id="vegetables"
+                        name="category"
+                        value="vegetables"
+                    >
                 </p>
                 <p>
                     <label for="price">Unit Price: $</label>
@@ -50,6 +81,7 @@
                         max="1000"
                     >
                 </p>
+                <button>Submit</button>
             </form>
         </section>
     </main>
