@@ -5,6 +5,13 @@ const categoriesNode = document.getElementsByName('category');
 const priceNode = document.getElementById('price');
 const quantityNode = document.getElementById('quantity');
 
+let items = [];
+
+const jsonItems = window.localStorage.getItem('items');
+if(jsonItems) {
+    items = JSON.parse(jsonItems);
+}
+
 formNode.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -22,5 +29,9 @@ formNode.addEventListener('submit', function(event) {
         categories : categoriesSelected,
         price: priceNode.value,
         quantity: quantityNode.value
-    }
+    };
+    items.push(item);
+
+    const itemsJSON = JSON.stringify(items);
+    window.localStorage.setItem('items', itemsJSON);
 });
