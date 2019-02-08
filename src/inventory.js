@@ -1,5 +1,9 @@
 const tableBodyNode = document.getElementById('inventory');
 const jsonItems = window.localStorage.getItem('items');
+let dairy = 0;
+let meat = 0;
+let prepared = 0;
+let vegetables = 0;
 
 let items = [];
 
@@ -29,9 +33,33 @@ for(let index = 0; index < items.length; index++) {
     
     for(let index = 0; index < item.categories.length - 1 ; index++) {
         category.textContent += item.categories[index] + ', ';
+        if(item.categories[index] === 'dairy') {
+            dairy++;
+        }
+        if(item.categories[index] === 'meat') {
+            meat++;
+        }
+        if(item.categories[index] === 'prepared') {
+            prepared++;
+        }
+        if(item.categories[index] === 'vegetables') {
+            vegetables++;
+        }
     }
     if(item.categories.length > 0) {
         category.textContent += item.categories[item.categories.length - 1];
+        if(item.categories[item.categories.length - 1] === 'dairy') {
+            dairy++;
+        }
+        if(item.categories[item.categories.length - 1] === 'meat') {
+            meat++;
+        }
+        if(item.categories[item.categories.length - 1] === 'prepared') {
+            prepared++;
+        }
+        if(item.categories[item.categories.length - 1] === 'vegetables') {
+            vegetables++;
+        }
     }
     price.textContent = item.price;
     quantity.textContent = item.quantity;
@@ -62,3 +90,23 @@ for(let index = 0; index < items.length; index++) {
 
     tableBodyNode.appendChild(row);
 }
+
+const totalsNode = document.getElementById('totals');
+
+const totalRow = document.createElement('tr');
+const dairyTotal = document.createElement('td');
+const meatTotal = document.createElement('td');
+const preparedTotal = document.createElement('td');
+const vegetablesTotal = document.createElement('td');
+
+dairyTotal.textContent = dairy;
+meatTotal.textContent = meat;
+preparedTotal.textContent = prepared;
+vegetablesTotal.textContent = vegetables;
+
+totalRow.appendChild(dairyTotal);
+totalRow.appendChild(meatTotal);
+totalRow.appendChild(preparedTotal);
+totalRow.appendChild(vegetablesTotal);
+
+totalsNode.appendChild(totalRow);

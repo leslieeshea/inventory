@@ -1,3 +1,58 @@
+header {
+    color: black;
+    padding: 10px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(243, 218, 216);
+}
+
 td {
+    border: 1px solid rgb(70, 70, 85);
+    background-color: rgb(214, 217, 206);
+}
+
+table {
+    border-collapse: collapse;
+    border: 3px solid black;
+    margin-bottom: 40px;
+}
+
+thead {
+    border: 1px solid rgb(70, 70, 85);
+}
+
+th {
+    border: 1px solid rgb(70, 70, 85);
+    padding: 5px;
+    color: rgb(214, 217, 206);
+    background-color: rgb(108, 105, 141);
+}
+
+button {
+    display: block;
+    margin: auto;
+    background-color: rgb(108, 105, 141);
+    color: rgb(214, 217, 206);
+}
+
+button:hover {
+    background: rgb(70, 70, 85);
+}
+
+#create {
     border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: rgb(108, 105, 141); 
+}
+
+#create:hover {
+    background: white;
+}
+
+a:visited {
+    color: black;
 }
