@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="create-item.css">
+    <title>Create Item</title>
+</head>
+<body>
+    <header>
+        <h1>Update Item</h1>
+    </header>
+    <main>
+        <section>
+            <form id="create-item">
+                <p>
+                    <label for="name">Name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        minlength="1"
+                    >
+                </p>
+                <p>
+                    <label for="department">Department:</label>
+                    <select id="department">
+                        <option value="produce">Produce</option>
+                        <option value="refrigerate">Refrigerate</option>
+                        <option value="freezer">Freezer</option>
+                        <option value="non-perishables">Non-Perishables</option>
+                    </select>
+                </p>
+                <p>Category</p>
+                <p>
+                    <label for="dairy">Dairy</label>
+                    <input
+                        type="checkbox"
+                        id="dairy"
+                        name="category"
+                        value="dairy"
+                    >
+                    <label for="meat">Meat</label>
+                    <input
+                        type="checkbox"
+                        id="meat"
+                        name="category"
+                        value="meat"
+                    >
+                    <label for="prepared">Prepared Foods</label>
+                    <input
+                        type="checkbox"
+                        id="prepared"
+                        name="category"
+                        value="prepared"
+                    >
+                    <label for="vegetables">Vegetables</label>
+                    <input
+                        type="checkbox"
+                        id="vegetables"
+                        name="category"
+                        value="vegetables"
+                    >
+                </p>
+                <p>
+                    <label for="price">Unit Price: $</label>
+                    <input
+                        type="number"
+                        step="0.01"
+                        id="price"
+                        min="0"
+                        max="1000"
+                    >
+                </p>
+                <p>
+                    <label for="quantity">Quantity:</label>
+                    <input 
+                        type="number"
+                        id="quantity"
+                        min="0"
+                        max="1000"
+                    >
+                </p>
+                <button>Submit</button>
+            </form>
+        </section>
+    </main>
+    <script type="module" src="./src/update-item.js"></script>
+</body>
+</html>
