@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="create-item.css">
+    <title>Create Item</title>
+</head>
+<body>
+    <header>
+        <h1>Create an Item</h1>
+    </header>
+    <main>
+        <section>
+            <form>
+                <p>
+                    <label for="name">Name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        minlength="1"
+                    >
+                </p>
+                <p>
+                    <label for="category">Category:</label>
+                    <select id="category">
+                        <option value="produce">Produce</option>
+                        <option value="dairy">Dairy</option>
+                        <option value="dry-goods">Dry Goods</option>
+                        <option value="beverages">Beverages</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="price">Unit Price: $</label>
+                    <input
+                        type="number"
+                        step="0.01"
+                        id="price"
+                        min="0"
+                        max="1000"
+                    >
+                </p>
+                <p>
+                    <label for="quantity">Quantity:</label>
+                    <input 
+                        type="number"
+                        id="quantity"
+                        min="0"
+                        max="1000"
+                    >
+                </p>
+            </form>
+        </section>
+    </main>
+    <script type="module" src="./src/create-item.js"></script>
+</body>
+</html>
