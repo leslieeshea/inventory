@@ -11,6 +11,60 @@ if(jsonItems) {
     items = JSON.parse(jsonItems);
 }
 
+const filter = document.getElementById('filter');
+console.log(filter.value);
+
+filter.addEventListener('change', function() {
+    console.log(filter.value);
+    const allRows = document.getElementsByTagName('tr');
+
+    if(filter.value === 'all') {
+        for(let index = 0; index < allRows.length; index++) {
+            const row = allRows[index];
+            row.hidden = false;
+        }
+    }
+    else {
+        const dairyRows = document.querySelectorAll('.dairy');
+        const meatRows = document.querySelectorAll('.meat');
+        const preparedRows = document.querySelectorAll('.prepared');
+        const vegetablesRows = document.querySelectorAll('.vegetables');
+
+        for(let index = 0; index < dairyRows.length; index++) {
+            dairyRows[index].hidden = true;
+        }
+        for(let index = 0; index < meatRows.length; index++) {
+            meatRows[index].hidden = true;
+        }
+        for(let index = 0; index < preparedRows.length; index++) {
+            preparedRows[index].hidden = true;
+        }
+        for(let index = 0; index < vegetablesRows.length; index++) {
+            vegetablesRows[index].hidden = true;
+        }
+        if(filter.value === 'dairy') {
+            for(let index = 0; index < dairyRows.length; index++) {
+                dairyRows[index].hidden = false;
+            }
+        }
+        if(filter.value === 'meat') {
+            for(let index = 0; index < meatRows.length; index++) {
+                meatRows[index].hidden = false;
+            }
+        }
+        if(filter.value === 'prepared') {
+            for(let index = 0; index < preparedRows.length; index++) {
+                preparedRows[index].hidden = false;
+            }
+        }
+        if(filter.value === 'vegetables') {
+            for(let index = 0; index < vegetablesRows.length; index++) {
+                vegetablesRows[index].hidden = false;
+            }
+        }
+    }
+});
+
 for(let index = 0; index < items.length; index++) {
     const item = items[index];
     const row = document.createElement('tr');
@@ -32,32 +86,36 @@ for(let index = 0; index < items.length; index++) {
     link.textContent = item.name;
     
     for(let index = 0; index < item.categories.length - 1 ; index++) {
-        category.textContent += item.categories[index] + ', ';
-        if(item.categories[index] === 'dairy') {
+        const thisCategory = item.categories[index];
+        category.textContent += thisCategory + ', ';
+        if(thisCategory === 'dairy') {
             dairy++;
         }
-        if(item.categories[index] === 'meat') {
+        if(thisCategory === 'meat') {
             meat++;
         }
-        if(item.categories[index] === 'prepared') {
+        if(thisCategory === 'prepared') {
             prepared++;
         }
-        if(item.categories[index] === 'vegetables') {
+        if(thisCategory === 'vegetables') {
             vegetables++;
         }
+        row.classList.add(thisCategory);
     }
     if(item.categories.length > 0) {
-        category.textContent += item.categories[item.categories.length - 1];
-        if(item.categories[item.categories.length - 1] === 'dairy') {
+        const thisCategory = item.categories[item.categories.length - 1];
+        row.classList.add(thisCategory);
+        category.textContent += thisCategory;
+        if(thisCategory === 'dairy') {
             dairy++;
         }
-        if(item.categories[item.categories.length - 1] === 'meat') {
+        if(thisCategory === 'meat') {
             meat++;
         }
-        if(item.categories[item.categories.length - 1] === 'prepared') {
+        if(thisCategory === 'prepared') {
             prepared++;
         }
-        if(item.categories[item.categories.length - 1] === 'vegetables') {
+        if(thisCategory === 'vegetables') {
             vegetables++;
         }
     }
