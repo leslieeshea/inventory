@@ -12,10 +12,8 @@ if(jsonItems) {
 }
 
 const filter = document.getElementById('filter');
-console.log(filter.value);
 
 filter.addEventListener('change', function() {
-    console.log(filter.value);
     const allRows = document.getElementsByTagName('tr');
 
     if(filter.value === 'all') {
